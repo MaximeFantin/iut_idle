@@ -6,7 +6,8 @@ screen = pygame.display.set_mode((1088, 720))
 clock = pygame.time.Clock()
 running = True
 
-
+from src.map.MapGenerator import MapGenerator
+map = MapGenerator.generate()
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -15,8 +16,8 @@ while running:
     screen.fill(pygame.Color(65, 60, 70))
 
 
+    map.terrainGroup.draw(screen)
 
-    
 
     pygame.display.flip()
     clock.tick(30)

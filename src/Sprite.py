@@ -7,4 +7,4 @@ class Sprite(pygame.sprite.Sprite):
     def __init__(self, pos, width, height, *groups):
         super().__init__(Sprite.ALIVE_SPRITES, *groups)
         self.image = pygame.Surface((width, height))
-        self.rect = pygame.Rect(pos[1], pos[0], width, height)
+        self.rect = pygame.Rect(pos[0], pos[1], width, height)

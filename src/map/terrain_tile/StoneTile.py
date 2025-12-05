@@ -1,9 +1,10 @@
 from random import choice
-from ..Terrain import Terrain
+from src.map.TerrainTile import TerrainTile
 
-class StoneTile(Terrain):
+class StoneTile(TerrainTile):
 
     SPRITES = ["assets/sprites/terrain/stone1.png", "assets/sprites/terrain/stone2.png", "assets/sprites/terrain/stone3.png"]
 
     def __init__(self, pos, *groups):
-        super().__init__(pos, choice(StoneTile.SPRITES), *groups)
+        self.spriteURL = choice(StoneTile.SPRITES)
+        super().__init__(pos, self.spriteURL, *groups)
